@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{ABDB2CB3-D6F8-4FAE-BC96-EC1708BC0140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{ABDB2CB3-D6F8-4FAE-BC96-EC1708BC0140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerstpuzzel", "..\..\..\Kerstpuzzel\Kerstpuzzel\Kerstpuzzel.csproj", "{BB2C106C-18F0-46CE-B4FF-93BFDCEBAA8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ABDB2CB3-D6F8-4FAE-BC96-EC1708BC0140}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABDB2CB3-D6F8-4FAE-BC96-EC1708BC0140}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABDB2CB3-D6F8-4FAE-BC96-EC1708BC0140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2C106C-18F0-46CE-B4FF-93BFDCEBAA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2C106C-18F0-46CE-B4FF-93BFDCEBAA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2C106C-18F0-46CE-B4FF-93BFDCEBAA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2C106C-18F0-46CE-B4FF-93BFDCEBAA8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
