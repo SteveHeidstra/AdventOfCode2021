@@ -71,11 +71,9 @@ namespace Tests
 
         [Test]
         public void Day3_Puz1E()
-        {
-            string[] file = BestandHelper.Readfile(@"Input\D3P1E.txt");
-            Submarine sub = new Submarine();
+        { Submarine sub = new Submarine();
 
-            sub.ParseDiagnosticReport(file);
+            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt"); 
 
             Assert.AreEqual(198, sub.PowerConsumption);
         }
@@ -83,14 +81,36 @@ namespace Tests
         [Test]
         public void Day3_Puz1()
         {
-            string[] file = BestandHelper.Readfile(@"Input\D3P1.txt");
             Submarine sub = new Submarine();
 
-            sub.ParseDiagnosticReport(file);
-
+            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1.txt");
+            
             Assert.AreEqual(2967914, sub.PowerConsumption);
         }
 
         #endregion
+
+        [Test]
+        public void Day3_Puz2E_Oxygen()
+        {
+            Submarine sub = new Submarine();
+
+            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt");
+
+            Assert.AreEqual(23, sub.OxygenGeneratorRating);
+            Assert.AreEqual(10, sub.CO2ScrubberRating);
+            Assert.AreEqual(230, sub.LifeSupportRating);
+        }
+
+        [Test]
+        public void Day3_Puz2()
+        {
+            Submarine sub = new Submarine();
+
+            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1.txt");
+
+            Assert.AreEqual(7041258, sub.LifeSupportRating);
+        }
+
     }
 }
