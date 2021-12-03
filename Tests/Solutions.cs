@@ -6,7 +6,7 @@ using System;
 
 namespace Tests
 {
-    public class Tests
+    public class Solutions
     {
         [SetUp]
         public void Setup()
@@ -14,6 +14,7 @@ namespace Tests
             BestandHelper.ApplicationPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         }
 
+        #region Solved
         [Test]
         public void Day2_Puz1E()
         {
@@ -23,7 +24,7 @@ namespace Tests
             foreach (string line in file)
             {
                 Console.WriteLine(line);
-                sub.command = line;
+                sub.Command = line;
                 Console.WriteLine(sub.HorizontalPosition);
                 Console.WriteLine(sub.Depth);
 
@@ -41,7 +42,7 @@ namespace Tests
 
             foreach (string line in file)
             {
-                sub.command = line;
+                sub.Command = line;
                 Console.WriteLine(line);
             }
 
@@ -58,8 +59,8 @@ namespace Tests
 
             foreach (string line in file)
             {
-                sub.command = line;
-               // Console.WriteLine(line);
+                sub.Command = line;
+                // Console.WriteLine(line);
             }
 
             Console.WriteLine(sub.HorizontalPosition);
@@ -67,5 +68,29 @@ namespace Tests
             Console.WriteLine(sub.HorizontalPosition * sub.Depth);
 
         }
+
+        [Test]
+        public void Day3_Puz1E()
+        {
+            string[] file = BestandHelper.Readfile(@"Input\D3P1E.txt");
+            Submarine sub = new Submarine();
+
+            sub.ParseDiagnosticReport(file);
+
+            Assert.AreEqual(198, sub.PowerConsumption);
+        }
+
+        [Test]
+        public void Day3_Puz1()
+        {
+            string[] file = BestandHelper.Readfile(@"Input\D3P1.txt");
+            Submarine sub = new Submarine();
+
+            sub.ParseDiagnosticReport(file);
+
+            Assert.AreEqual(2967914, sub.PowerConsumption);
+        }
+
+        #endregion
     }
 }
