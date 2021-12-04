@@ -95,10 +95,10 @@ namespace Tests
         {
             Submarine sub = new Submarine();
 
-            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt");
+           sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt");
 
             Assert.AreEqual(23, sub.OxygenGeneratorRating);
-            Assert.AreEqual(10, sub.CO2ScrubberRating);
+             Assert.AreEqual(10, sub.CO2ScrubberRating);
             Assert.AreEqual(230, sub.LifeSupportRating);
         }
 
