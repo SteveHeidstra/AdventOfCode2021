@@ -3,6 +3,9 @@ using Kerstpuzzel;
 using System.IO;
 using System.Reflection;
 using System;
+using AoC2021;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Tests
 {
@@ -71,9 +74,10 @@ namespace Tests
 
         [Test]
         public void Day3_Puz1E()
-        { Submarine sub = new Submarine();
+        {
+            Submarine sub = new Submarine();
 
-            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt"); 
+            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt");
 
             Assert.AreEqual(198, sub.PowerConsumption);
         }
@@ -84,21 +88,19 @@ namespace Tests
             Submarine sub = new Submarine();
 
             sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1.txt");
-            
+
             Assert.AreEqual(2967914, sub.PowerConsumption);
         }
-
-        #endregion
 
         [Test]
         public void Day3_Puz2E_Oxygen()
         {
             Submarine sub = new Submarine();
 
-           sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt");
+            sub.DiagnosticReport = BestandHelper.Readfile(@"Input\D3P1E.txt");
 
             Assert.AreEqual(23, sub.OxygenGeneratorRating);
-             Assert.AreEqual(10, sub.CO2ScrubberRating);
+            Assert.AreEqual(10, sub.CO2ScrubberRating);
             Assert.AreEqual(230, sub.LifeSupportRating);
         }
 
@@ -111,6 +113,122 @@ namespace Tests
 
             Assert.AreEqual(7041258, sub.LifeSupportRating);
         }
+
+        [Test]
+        public void Day5_Puz1E()
+        {
+            int dangerousVentSpots = 0;
+            Dictionary<Point, int> VentSpots = new Dictionary<Point, int>();
+
+            string[] file = BestandHelper.Readfile(@"Input\D5P1E.txt");
+            foreach (string line in file)
+            {
+                VentLine vl = new VentLine(line);
+                if (vl.HorizontalOrVertical)
+                {
+                    foreach (Point point in vl.Points)
+                    {
+                        if (VentSpots.ContainsKey(point))
+                        {
+                            VentSpots[point]++;
+                        }
+                        else
+                        {
+                            VentSpots.Add(point, 1);
+                        }
+                    }
+                }
+            }
+            dangerousVentSpots = VentSpots.Count(x => x.Value > 1);
+            Assert.AreEqual(5, dangerousVentSpots);
+        }
+
+        [Test]
+        public void Day5_Puz1()
+        {
+            int dangerousVentSpots = 0;
+            Dictionary<Point, int> VentSpots = new Dictionary<Point, int>();
+
+            string[] file = BestandHelper.Readfile(@"Input\D5P1.txt");
+            foreach (string line in file)
+            {
+                VentLine vl = new VentLine(line);
+                if (vl.HorizontalOrVertical)
+                {
+                    foreach (Point point in vl.Points)
+                    {
+                        if (VentSpots.ContainsKey(point))
+                        {
+                            VentSpots[point]++;
+                        }
+                        else
+                        {
+                            VentSpots.Add(point, 1);
+                        }
+                    }
+                }
+            }
+            dangerousVentSpots = VentSpots.Count(x => x.Value > 1);
+            Assert.AreEqual(5167, dangerousVentSpots);
+        }
+
+        [Test]
+        public void Day5_Puz2E()
+        {
+            int dangerousVentSpots = 0;
+            Dictionary<Point, int> VentSpots = new Dictionary<Point, int>();
+
+            string[] file = BestandHelper.Readfile(@"Input\D5P1E.txt");
+            foreach (string line in file)
+            {
+                VentLine vl = new VentLine(line);
+
+                foreach (Point point in vl.Points)
+                {
+                    if (VentSpots.ContainsKey(point))
+                    {
+                        VentSpots[point]++;
+                    }
+                    else
+                    {
+                        VentSpots.Add(point, 1);
+                    }
+                }
+            }
+
+            dangerousVentSpots = VentSpots.Count(x => x.Value > 1);
+            Assert.AreEqual(12, dangerousVentSpots);
+        }
+
+        [Test]
+        public void Day5_Puz2()
+        {
+            int dangerousVentSpots = 0;
+            Dictionary<Point, int> VentSpots = new Dictionary<Point, int>();
+
+            string[] file = BestandHelper.Readfile(@"Input\D5P1.txt");
+            foreach (string line in file)
+            {
+                VentLine vl = new VentLine(line);
+
+                foreach (Point point in vl.Points)
+                {
+                    if (VentSpots.ContainsKey(point))
+                    {
+                        VentSpots[point]++;
+                    }
+                    else
+                    {
+                        VentSpots.Add(point, 1);
+                    }
+                }
+            }
+
+            dangerousVentSpots = VentSpots.Count(x => x.Value > 1);
+            Assert.AreEqual(17604, dangerousVentSpots);
+        }
+        #endregion
+
 
     }
 }
