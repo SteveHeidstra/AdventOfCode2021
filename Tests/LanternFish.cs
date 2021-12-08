@@ -36,16 +36,27 @@ namespace AoC2021
         }
 
         [Test]
-        public void CalculateBigPopulationP2()
+        public void SecondAttemt()
         {
-            List<int> population = BestandHelper.Readfile(@"Input\D6P1.txt").First().Split(',').Select(Int32.Parse).ToList();
-            Assert.AreEqual(365131, CalculateBigPopulation(population, 256));
+            List<int> population = BestandHelper.Readfile(@"Input\D6P1E.txt").First().Split(',').Select(Int32.Parse).ToList();
+            Int64 countall = 0;
+            foreach (int fish in population)
+            {
+                countall += CalculateBigPopulation(new List<int>() { fish }, 256);
+            }
+
+            Assert.AreEqual(26984457539, countall);
         }
 
         public int CalculateBigPopulation(List<int> population, int days)
         {
-            return 0;
-
+            List<int> newPop = population.ToList();
+           
+            for (int i = 0; i < days; i++)
+            {
+                newPop = TomorrowsPopulation(newPop);  
+            }
+            return newPop.Count();
         }
 
         public int CalculatePopulation(List<int> population, int days)
