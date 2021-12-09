@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Kerstpuzzel\Kerstpuzzel\Kerstpuzzel.csproj" />
+    <ProjectReference Include="..\Kerstpuzzel\Kerstpuzzel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
