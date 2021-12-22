@@ -175,7 +175,7 @@ namespace AoC2021
         }
     }
 
-    class Location : IEquatable<Location>
+    public class Location : IEquatable<Location>
     {
         public Location(int row, int col, int value) 
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Kerstpuzzel.Route
 {
@@ -7,6 +8,11 @@ namespace Kerstpuzzel.Route
         public Route(Node destination)
         {
             End = new Waypoint(destination);
+        }
+
+        public Route(List<Node> path)
+        {
+            
         }
 
         public Waypoint Start

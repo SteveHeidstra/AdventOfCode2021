@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Kerstpuzzel.Route
 {
-    public class Node
+    public class Node: IEquatable<Node>
     {
         public Node(object referenceObject)
         {
@@ -23,5 +23,12 @@ namespace Kerstpuzzel.Route
         public Leg shortestLeg { get; set; }
 
         public bool Visited { get; set; }
+
+        public bool Equals(Node other)
+        {
+            return Reference == other.Reference;
+        }
+
+        public override int GetHashCode() => (Reference).GetHashCode();
     }
 }

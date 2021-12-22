@@ -15,9 +15,9 @@ namespace Kerstpuzzel.Route
             currentNode.Distance = 0;
             Node node = VisitNeighbours(currentNode, distancesList);
 
-           return new Route(destination);           
+            return new Route(destination);
         }
-              
+
         private static Node VisitNeighbours(Node currentNode, List<Leg> distancesList)
         {
             foreach (Node neighbour in currentNode.Neighbours)
@@ -61,7 +61,7 @@ namespace Kerstpuzzel.Route
                 return currentNode;
             }
             return VisitNeighbours(newNode, distancesList);
-        }
+        }       
     }
 }
 
